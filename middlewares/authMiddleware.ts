@@ -26,7 +26,7 @@ export const verifyToken = (req: RequestWithUser, res: Response, next: NextFunct
             if (err || !decoded)
                 id = Math.floor(Math.random() * 1000);
             else { // @ts-ignore
-                id = decoded.id
+                id = decoded.id || Math.floor(Math.random() * 1000)
             }
 
             // @ts-ignore
